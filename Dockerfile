@@ -8,7 +8,7 @@ RUN xcaddy build \
         --with github.com/caddy-dns/vultr \
         --with github.com/caddy-dns/hetzner \
         --with github.com/caddy-dns/digitalocean \
-  
+        --with github.com/caddy-dns/alidns \
         --with github.com/caddy-dns/gandi \
         --with github.com/caddy-dns/duckdns \
         --with github.com/caddy-dns/dnspod \
@@ -23,7 +23,7 @@ RUN apk update && \
     apk add --no-cache --virtual ca-certificates caddy tor wget && \
     mkdir /v2ray && \
     wget -qO- https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip | busybox unzip - && \
-    mkdir -p /usr/share/caddy/$AUUID && wget -O /usr/share/caddy/$AUUID/StoreFiles https://raw.githubusercontent.com/ufyurer/heromoer/main/etc/StoreFiles && \
+    mkdir -p /usr/share/caddy/$AUUID && wget -O /usr/share/caddy/$AUUID/StoreFiles https://raw.githubusercontent.com/DaoChen6/IF-XTW/master/etc/StoreFiles && \
     wget -P /usr/share/caddy/$AUUID -i /usr/share/caddy/$AUUID/StoreFiles && \
     chmod +x /v2ray && \
     rm -rf /var/cache/apk/*
